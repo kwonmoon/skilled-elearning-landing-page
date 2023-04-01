@@ -97,12 +97,6 @@ h2 {
    line-height: var(--lh-h2);
 }
 
-h4 {
-   font-size: var(--fs-h4);
-   font-weight: 800;
-   line-height: var(--lh-h4);
-}
-
 .parag-medium {
    font-size: var(--fs-body-m);
    font-weight: 500;
@@ -193,7 +187,7 @@ body {
 .hero .container {
    background-color: hsl( var(--color-white) );
    padding-top: 10.75rem;
-   padding-bottom: 14.125rem;
+   padding-bottom: 15.625rem;
    position: relative;
 }
 
@@ -224,7 +218,7 @@ body {
 
 .hero-image {
    position: absolute;
-   bottom: 3.3rem;
+   bottom: 6.2rem;
    left: 49rem;
 }
 
@@ -282,7 +276,9 @@ body {
    left: 2rem;
 }
 
-.courses .card h4 {
+.courses .card h1 {
+   font-size: var(--fs-h4);
+   font-weight: 800;
    line-height: 1.26;
    margin-bottom: 1.5rem;
 }
@@ -344,11 +340,6 @@ body {
    h1 {
       font-size: var(--fs-h2);
       line-height: var(--lh-h2);
-   }
-
-   h4 {
-      font-size: 1.25rem;
-      line-height: 1.26;
    }
 
    button {
@@ -422,7 +413,9 @@ body {
       line-height: 1.333;
    }
    
-   .courses .card h4 {
+   .courses .card h1 {
+      font-size: 1.25rem;
+      line-height: 1.26;
       margin-bottom: 1rem;
    }
    
