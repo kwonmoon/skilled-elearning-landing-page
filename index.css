@@ -1,0 +1,501 @@
+:root {
+   /* colors */
+   --color-light-gray: 0, 0%, 95%;
+   --color-slate-blue: 234, 25%, 52%;
+   --color-midnight-blue: 233, 54%, 16%;
+   --color-slate-gray: 232, 10%,56%;
+   --color-hot-pink: 341, 92%, 62%;
+   --color-baby-pink: 341, 100%, 83%;
+   --color-white: 0, 0%, 100%;
+   --color-bright-orange: 13, 100%, 64%;
+   --color-dark-pink: 322, 87%, 55%;
+   --color-bright-blue: 237, 100%, 64%;
+   --color-baby-blue: 234, 100%, 97%;
+
+   --gradient-orangepink: linear-gradient(
+      180deg,
+      hsla( var(--color-bright-orange), 1 ) 0.04%,
+      hsla( var(--color-dark-pink), 1 ) 100%
+   );
+   --gradient-orangepink-hover: linear-gradient(
+      180deg,
+      hsla( var(--color-bright-orange), 0.5 ) 0.04%,
+      hsla( var(--color-dark-pink), 0.5 ) 100%
+   );
+   --gradient-bluepink: linear-gradient(
+      180deg,
+      hsla( var(--color-bright-blue), 1 ) 0.04%,
+      hsla( var(--color-dark-pink), 1 ) 100%
+   );
+   --gradient-white: linear-gradient(
+      180deg,
+      hsla( var(--color-white), 1 ) 0%,
+      hsla( var(--color-baby-blue), 1 ) 100%
+   );
+
+   /* fonts */
+   --fs-h1: 3.5rem;
+   --fs-h2: 2.5rem;
+   --fs-h3: 2rem;
+   --fs-h4: 1.5rem;
+   --fs-body-m: 1.125rem;
+   --fs-body-s: 1rem;
+
+   /* line height */
+   --lh-h1: 1.25;
+   --lh-h2: 1.275;
+   --lh-h3: 1.25;
+   --lh-h4: 1.1667;
+   --lh-body-m: 1.5556;
+   --lh-body-s: 1.75;
+}
+
+/* --------------- */
+/* Reset           */
+/* --------------- */
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+* {
+   margin: 0;
+}
+
+html,
+body {
+   height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+   display: block;
+   max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+   font: inherit;
+}
+
+h1 {
+   font-size: var(--fs-h1);
+   font-weight: 800;
+   line-height: var(--lh-h1);
+}
+
+h2 {
+   font-size: var(--fs-h2);
+   font-weight: 800;
+   line-height: var(--lh-h2);
+}
+
+h4 {
+   font-size: var(--fs-h4);
+   font-weight: 800;
+   line-height: var(--lh-h4);
+}
+
+.parag-medium {
+   font-size: var(--fs-body-m);
+   font-weight: 500;
+   line-height: var(--lh-body-m);
+   color: hsl( var(--color-slate-gray) );
+}
+
+.parag-small {
+   font-size: var(--fs-body-s);
+   font-weight: 400;
+   line-height: var(--lh-body-s);
+   color: hsl( var(--color-slate-gray) );
+}
+
+button {
+   border: 0;
+   font-size: var(--fs-body-m);
+   font-weight: 700;
+   line-height: var(--lh-body-m);
+   color: hsl( var(--color-white) );
+   border-radius: 1.75rem;
+}
+
+button:hover {
+   cursor: pointer;
+}
+
+body {
+   background-color: hsl( var(--color-light-gray) );
+   color: hsl( var(--color-midnight-blue) );
+   font-family: 'Plus Jakarta Sans', sans-serif;
+   margin-inline: auto;
+}
+
+/* --------------- */
+/* Utility Classes */
+/* --------------- */
+
+.container {
+   max-width: 90rem; /* 1440px */
+   padding-inline: 165px;
+   margin-inline: auto;
+}
+
+.flex {
+   display: flex;
+   gap: var(--gap, 1rem);
+}
+
+.grid {
+   display: grid;
+   gap: var(--gap, 1rem);
+}
+
+.flow > :where(:not(:first-child)) {
+   margin-top: var(--flow-space, 1rem);
+}
+
+/* --------------- */
+/* Components      */
+/* --------------- */
+
+/* Header */
+
+.header {
+   background-color: hsl( var(--color-white) );
+   justify-content: space-between;
+   align-items: center;
+   padding-top: 1.5rem;
+}
+
+.header img {
+   height: 100%;
+}
+
+.header-button {
+   background-color: hsl( var(--color-midnight-blue) );
+   padding: 0.875rem 2rem;
+   z-index: 2;
+}
+
+.header-button:hover {
+   background-color: hsl( var(--color-slate-blue) );
+}
+
+/* Hero */
+
+.hero .container {
+   background-color: hsl( var(--color-white) );
+   padding-top: 10.75rem;
+   padding-bottom: 14.125rem;
+   position: relative;
+}
+
+.hero-statement {
+   width: 42%;
+}
+
+.hero-statement h1 {
+   margin-bottom: 2rem;
+}
+
+.hero-statement p {
+   font-size: var(--fs-body-m);
+   font-weight: 500;
+   line-height: var(--lh-body-m);
+   color: hsl( var(--color-slate-gray) );
+   margin-bottom: 2.5rem;
+}
+
+.hero-button {
+   background: var(--gradient-orangepink);
+   padding: 1.125rem 2rem;
+}
+
+.hero-button:hover {
+   background: var(--gradient-orangepink-hover);
+}
+
+.hero-image {
+   position: absolute;
+   bottom: 3.3rem;
+   left: 49rem;
+}
+
+.hero-image .desktop {
+   max-width: 62rem;
+   max-height: 58.56rem;
+}
+
+.hero-image .tablet {
+   display: none;
+   max-width: 40rem;
+   max-height: 40rem;
+}
+
+.hero-image .mobile {
+   display: none;
+   max-width: 20.5rem;
+   max-height: 19rem;
+}
+
+/* Courses */
+
+.courses {
+   background: var(--gradient-white);
+   padding-bottom: 8.75rem;
+   grid: repeat(2, 1fr) / repeat(3, 1fr);
+   gap: 5rem 1.875rem;
+}
+
+.courses .special,
+.courses .card {
+   border-radius: 0.9375rem;
+   padding: 4rem 2rem 2.5rem;
+}
+   
+.courses .special {
+   background-image: var(--gradient-orangepink);
+   color: hsl( var(--color-white) );
+   font-size: var(--fs-h3);
+   font-weight: 800;
+   line-height: var(--lh-h3);
+}
+
+.courses .card {
+   background-color: hsl( var(--color-white) );
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.courses .card img {
+   position: absolute;
+   top: -1.5rem;
+   left: 2rem;
+}
+
+.courses .card h4 {
+   line-height: 1.26;
+   margin-bottom: 1.5rem;
+}
+
+.courses .card p {
+   width: 100%;
+   font-size: var(--fs-body-m);
+   font-weight: 500;
+   line-height: var(--lh-body-m);
+   color: hsl( var(--color-slate-gray) );
+   margin-bottom: 1.5rem;
+}
+
+.courses .card button {
+   background-color: hsl( var(--color-white) );
+   color: hsl( var(--color-hot-pink) );
+   border: none;
+   padding: 0;
+   width: 8rem;
+   font-size: var(--fs-body-m);
+   font-weight: 700;
+   line-height: var(--lh-body-m);
+   text-align: left;
+}
+
+.courses .card button:hover {
+   color: hsl( var(--color-baby-pink) );
+}
+
+/* Footer */
+
+.footer {
+   background-color: hsl( var(--color-midnight-blue) );
+}
+
+.footer .container {
+   justify-content: space-between;
+   align-items: center;
+}
+
+.footer .footer-button {
+   background: var(--gradient-bluepink);
+   padding: 0.875rem 2rem;
+   margin: 2rem 0;
+}
+
+.footer .footer-button:hover {
+   background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)),
+      linear-gradient(
+         180deg,
+         #4851FF -54.32%,
+         #F02AA6 100%);
+}
+
+@media screen and (max-width: 1200px) {
+   h1 {
+      font-size: var(--fs-h2);
+      line-height: var(--lh-h2);
+   }
+
+   h4 {
+      font-size: 1.25rem;
+      line-height: 1.26;
+   }
+
+   button {
+      font-size: var(--fs-body-s);
+      line-height: var(--lh-body-s);
+   }
+
+   .header-button {
+      padding: 0.625rem 1.5rem;
+   }
+
+   .container {
+      padding-inline: 2.5rem;
+   }   
+
+   .hero .container {
+      padding-top: 6.1875rem;
+      padding-bottom: 11.625rem;
+   }   
+
+   .hero-statement {
+      width: 60%;
+   }
+
+   .hero-statement h1 {
+      margin-bottom: 1.5625rem;
+   }
+
+   .hero-statement p {
+      font-size: var(--fs-body-s);
+      line-height: 1.625rem;
+      margin-bottom: 1.5rem;
+   }
+
+   .hero-button {
+      padding: 0.875rem 2.375rem;
+   }
+
+   .hero-image {
+      bottom: 4.2rem;
+      left: 26.56rem;
+   }   
+
+   .hero-image .desktop {
+      display: none;
+   }
+
+   .hero-image .tablet {
+      display: block;
+   }
+
+   .hero-image .mobile {
+      display: none;
+   }
+
+   .courses {
+      padding-bottom: 5.375rem;
+      grid: repeat(3, 1fr) / repeat(2, 1fr);
+      gap: 3.55rem 0.625rem;
+   }
+   
+   .courses .special,
+   .courses .card {
+      border-radius: 0.625rem;
+      padding: 3.5rem 1.375rem 2rem 2rem;
+   }
+      
+   
+   .courses .special {
+      font-size: var(--fs-h4);
+      line-height: 1.333;
+   }
+   
+   .courses .card h4 {
+      margin-bottom: 1rem;
+   }
+   
+   .courses .card p {
+      font-size: var(--fs-body-s);
+      line-height: 1.625;
+   }  
+
+   .footer .footer-button {
+      padding: 0.625rem 1.5rem;
+      margin: 2.25rem 0;
+   }
+}
+
+@media screen and (max-width: 600px) {
+   .container {
+      padding-inline: 1rem;
+   }
+
+   .header {
+      padding-top: 1rem;
+   }   
+
+   .hero .container {
+      display: flex;
+      flex-direction: column;
+      padding-top: 2.375rem;
+      gap: 2.875rem;
+      padding-bottom: 0;
+   }
+
+   .hero-statement {
+      width: 100%;
+   }
+
+   .hero-statement h1 {
+      margin-bottom: 1.625rem;
+   }
+
+   .hero-statement p {
+      line-height: 1.625;
+   }
+
+   .hero-image {
+      position:static;
+   }   
+
+   .hero-image .desktop {
+      display: none;
+   }
+
+   .hero-image .tablet {
+      display: none;
+   }
+
+   .hero-image .mobile {
+      display: block;
+      margin-inline: auto;
+   }
+
+   
+   .courses {
+      padding-bottom: 5rem;
+      grid: 1fr repeat(5, 2.158fr) / 1fr;
+      gap: 2.5rem 0;
+   }
+   
+   .courses .special {
+      padding: 1.5rem 1.75rem 2rem;
+   }
+
+   .courses .card {
+      padding: 3.5rem 1.75rem 2rem;
+   }
+}
+
